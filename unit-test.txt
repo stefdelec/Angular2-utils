@@ -1,0 +1,39 @@
+##########################################
+## PIPE ##################################
+##########################################
+import { Pipe, PipeTransform } from '@angular/core';
+
+TestBed.configureTestingModule({
+            declarations: [
+                AppComponent,
+                MockPipe
+            ],
+
+import {Pipe, PipeTransform} from '@angular/core';
+
+@Pipe({name: 'pipename'})
+class MockPipe implements PipeTransform {
+    transform(value: number): number {
+        //Do stuff here, if you want
+        return value;
+    }
+}
+
+
+##########################################
+## TEMPLATE ERROR ########################
+##########################################
+import { NO_ERRORS_SCHEMA } from '@angular/core
+
+TestBed.configureTestingModule({
+      schemas: [NO_ERRORS_SCHEMA],
+
+    })
+      .compileComponents();
+      
+   
+##########################################
+## STUB SERVICES #########################
+##########################################
+
+
