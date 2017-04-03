@@ -53,5 +53,15 @@ let stubTopicService: any = {
     })
       .compileComponents();
       
-      
+##########################################
+## COMPONENT / ROUTER  ###################
+##########################################
+import { RouterTestingModule } from '@angular/router/testing';
+  beforeEach(async(() => {
+    TestBed.configureTestingModule({
+      declarations: [MyComponent],
+      imports: [RouterTestingModule],
+    })     
+      .compileComponents();
+  }));
   
