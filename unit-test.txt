@@ -1,5 +1,5 @@
 ##########################################
-## PIPE ##################################
+## COMPONENT / PIPE ######################
 ##########################################
 import { Pipe, PipeTransform } from '@angular/core';
 
@@ -21,7 +21,7 @@ class MockPipe implements PipeTransform {
 
 
 ##########################################
-## TEMPLATE ERROR ########################
+## COMPONENT / TEMPLATE ERROR ############
 ##########################################
 import { NO_ERRORS_SCHEMA } from '@angular/core
 
@@ -33,7 +33,25 @@ TestBed.configureTestingModule({
       
    
 ##########################################
-## STUB SERVICES #########################
+## COMPONENT / STUB SERVICES #############
 ##########################################
+let stubTopicService: any = {
+    topicsList: () => ("john"),
+    getTopicNameById: (id) => (id),
+    getAll: () => ('jo')
+  }
 
+    TestBed.configureTestingModule({
+      declarations: [FAQListComponent],
 
+    }).overrideComponent(FAQListComponent, {
+      set: {
+        providers: [
+          { provide: TopicsService, useValue: stubTopicService }
+        ]
+      }
+    })
+      .compileComponents();
+      
+      
+  
