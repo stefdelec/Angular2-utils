@@ -65,3 +65,18 @@ import { RouterTestingModule } from '@angular/router/testing';
       .compileComponents();
   }));
   
+  ##########################################
+## SERVICE / Service as DI  ################
+##########################################
+let stubAPITopicService={
+    getAllTopics:()=>{
+      return [1,2,3,4]
+    }
+  }
+  beforeEach(() => {
+    TestBed.configureTestingModule({
+      providers: [TopicsService,
+            { provide: TopicsAPIService, useValue: stubAPITopicService }
+      ]
+    })
+  });
